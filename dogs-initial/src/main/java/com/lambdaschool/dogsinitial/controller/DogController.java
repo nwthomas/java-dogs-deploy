@@ -85,7 +85,7 @@ public class DogController
         ModelAndView mav = new ModelAndView();
         DogsinitialApplication.ourDogList.dogList.sort((d1, d2) -> d1.getBreed().compareToIgnoreCase(d2.getBreed()));
         mav.setViewName("dogs");
-        mav.addObject("dogList", DogsinitialApplication.ourDogList.dogList);
+        mav.addObject("dogsList", DogsinitialApplication.ourDogList.dogList);
 		logger.trace("/breedtable accessed at " + new Date() + " in LOW QUEUE");
         return mav;
     }
@@ -105,7 +105,7 @@ public class DogController
             }
         }
         mav.setViewName("dogs");
-        mav.addObject("dogList", apartmentDogs);
+        mav.addObject("dogsList", apartmentDogs);
 		logger.trace("/apartmentbreedstable accessed at " + new Date() + " in LOW QUEUE");
         return mav;
     }
